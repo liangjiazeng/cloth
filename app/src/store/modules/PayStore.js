@@ -15,13 +15,13 @@ export default {
 	},
 	actions:{
 		findAllPays(context){
-			axios.get('http://localhost:3000/pay/findAll').then(({data})=>{
+			axios.get('http://39.105.13.137:3000/pay/findAll').then(({data})=>{
 				context.commit('alterPays',data);
 			})
 		},
 		savePay(context,from){
 			return new Promise(function(resolve,reject){
-				axios.post('http://localhost:3000/pay/save',{user:JSON.stringify(from)}).then((result)=>{
+				axios.post('http://39.105.13.137:3000/pay/save',{user:JSON.stringify(from)}).then((result)=>{
 
 					resolve(result);
 				}).catch((error)=>{

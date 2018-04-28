@@ -248,7 +248,7 @@ export default {
   	add_address(){
   		this.open_shouhuo =false;
   		this.address.user_id = this.user[0].id;
-  		axios.post('http://localhost:3000/user_address/save',{userAddress:JSON.stringify(this.address)}).then((result)=>{
+  		axios.post('http://39.105.13.137:3000/user_address/save',{userAddress:JSON.stringify(this.address)}).then((result)=>{
            this.$message({
               showClose: true,
               type: 'success',
@@ -269,7 +269,7 @@ export default {
   	//修改用户信息
   	to_update_user(){
   		this.openupdate =false;
-  		axios.post('http://localhost:3000/user/update',{user:JSON.stringify(this.user[0])}).then((result)=>{
+  		axios.post('http://39.105.13.137:3000/user/update',{user:JSON.stringify(this.user[0])}).then((result)=>{
            this.$message({
               showClose: true,
               type: 'success',
@@ -287,7 +287,7 @@ export default {
   	},
   	// 查找所有我的收货地址
   	findAllMyAddress(){
-  		axios.post('http://localhost:3000/user_address/findAll',{user_id:JSON.stringify(this.user[0].id)}).then((result)=>{
+  		axios.post('http://39.105.13.137:3000/user_address/findAll',{user_id:JSON.stringify(this.user[0].id)}).then((result)=>{
            	
            this.allAddress =Array.from(result.data);
            console.log("this.allAddress",this.allAddress);
@@ -303,7 +303,7 @@ export default {
   	},
   	to_delete_address(){
   		this.delete_address = false;
-  		axios.post('http://localhost:3000/user_address/batchDelete',{ids:JSON.stringify(this.delete_address_id.id)}).then((result)=>{
+  		axios.post('http://39.105.13.137:3000/user_address/batchDelete',{ids:JSON.stringify(this.delete_address_id.id)}).then((result)=>{
            	this.findAllMyAddress();
          
         }).catch((error)=>{

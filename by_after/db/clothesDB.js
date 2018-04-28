@@ -9,6 +9,20 @@ module.exports = {
       console.log(sql);
       return pool.execute(sql);
     },
+     //通过关键字查询_男
+    query_man(keys){
+      var sql = "select * from (select * from clothes where name like '%"+keys+"%' or designer_id in (select id from cloth_designer where name like '%"+
+      keys+"%') or type_id in (select id from cloth_type where name like '%"+keys+"%'))d where gender='男'" ;
+      console.log(sql);
+      return pool.execute(sql);
+    },
+     //通过关键字查询-女
+    query_woman(keys){
+      var sql = "select * from (select * from clothes where name like '%"+keys+"%' or designer_id in (select id from cloth_designer where name like '%"+
+      keys+"%') or type_id in (select id from cloth_type where name like '%"+keys+"%'))d where gender='女'" ;
+      console.log(sql);
+      return pool.execute(sql);
+    },
 
     //通过id查询
     findById(id){

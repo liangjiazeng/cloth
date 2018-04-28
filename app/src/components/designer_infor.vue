@@ -177,7 +177,7 @@
       	</el-col>
 		<!-- 添加设计的弹框 -->
 		<el-dialog title="新增衣服" :visible.sync="add_dialogFormVisible">
-			<form action="http://localhost:3000/clothes/save" method="POST" id="to_add" enctype='multipart/form-data'>
+			<form action="http://39.105.13.137:3000/clothes/save" method="POST" id="to_add" enctype='multipart/form-data'>
 					<div class="item">
 						<div class="left">名称：</div>
 						<div class="right"><input name="name" type="text"></div>
@@ -357,7 +357,7 @@ export default {
   	},
   	to_quxiaodingdan(){
   		this.quxiaodingdan =false;
-  		axios.post('http://localhost:3000/order/batchDelete',{ids:JSON.stringify(this.quxiaodingdan_id)}).then((result)=>{
+  		axios.post('http://39.105.13.137:3000/order/batchDelete',{ids:JSON.stringify(this.quxiaodingdan_id)}).then((result)=>{
 			vm.$message({
               showClose: true,
               type: 'success',
@@ -377,7 +377,7 @@ export default {
   	},
   	// 获取用户信息
   	findUser(){
-		axios.post('http://localhost:3000/designer/findByName',{designerName:JSON.stringify(this.userName)}).then((result)=>{
+		axios.post('http://39.105.13.137:3000/designer/findByName',{designerName:JSON.stringify(this.userName)}).then((result)=>{
 			this.user =result.data[0];
 			console.log("this.user.id",this.user.id);
       		this.findall_gouwuche();
@@ -389,7 +389,7 @@ export default {
   	findall_gouwuche(){
         var vm = this;
         // console.log("this.user_id",this.user_id);
-        axios.post('http://localhost:3000/order/findByDesignerId',{designer_id:JSON.stringify(this.user.id)}).then(({data})=>{
+        axios.post('http://39.105.13.137:3000/order/findByDesignerId',{designer_id:JSON.stringify(this.user.id)}).then(({data})=>{
         	console.log("data",data);
           vm.sb = Array.from(data);
           vm.sb.forEach(function(item,index){
@@ -400,7 +400,7 @@ export default {
       },
       findCloth(id,arr){
         var vm = this;
-        axios.post('http://localhost:3000/clothes/findId',{cloth_id:JSON.stringify(id)}).then((result)=>{
+        axios.post('http://39.105.13.137:3000/clothes/findId',{cloth_id:JSON.stringify(id)}).then((result)=>{
           var res = Array.from(result.data);
               vm.cloth_name.push(res[0].name);
                vm.img.push(res[0].src);
@@ -415,7 +415,7 @@ export default {
   	//修改个人信息
   	OK_update(){
   		this.update_user =false;
-  		axios.post('http://localhost:3000/designer/update',{from:JSON.stringify(this.user)}).then((result)=>{
+  		axios.post('http://39.105.13.137:3000/designer/update',{from:JSON.stringify(this.user)}).then((result)=>{
 			console.log(result);
 			this.$message({
               showClose: true,
@@ -434,7 +434,7 @@ export default {
   	},
   	// 展示我的设计
   	findMyDesige(){
-  		axios.post('http://localhost:3000/clothes/findByDesignerName',{designerName:JSON.stringify(this.userName)}).then((result)=>{
+  		axios.post('http://39.105.13.137:3000/clothes/findByDesignerName',{designerName:JSON.stringify(this.userName)}).then((result)=>{
   		
 			this.myClothes =Array.from(result.data);
 			
@@ -445,7 +445,7 @@ export default {
   	// 删除设计
   	delete_mycloth(id){
   		var vm =this;
-  		axios.post('http://localhost:3000/clothes/batchDelete',{ids:JSON.stringify(id)}).then((result)=>{
+  		axios.post('http://39.105.13.137:3000/clothes/batchDelete',{ids:JSON.stringify(id)}).then((result)=>{
 	  		vm.$message({
 	              showClose: true,
 	              type: 'success',
@@ -476,7 +476,7 @@ export default {
   		// $('#to_add').submit();
   		$('#to_add').ajaxSubmit({
             type: 'post', // 提交方式 get/post
-            url: 'http://localhost:3000/clothes/save', // 需要提交的 url
+            url: 'http://39.105.13.137:3000/clothes/save', // 需要提交的 url
             success: function(data) { // data 保存提交后返回的数据，一般为 json 数据
                 // 此处可对 data 作相关处理
        			vm.add_dialogFormVisible =false;
@@ -500,7 +500,7 @@ export default {
 	// 去修改
 	to_update(){
 		this.update_dialogVisible =false;
-		axios.post('http://localhost:3000/clothes/update',{update_cloth:JSON.stringify(this.update_cloth)}).then((result)=>{
+		axios.post('http://39.105.13.137:3000/clothes/update',{update_cloth:JSON.stringify(this.update_cloth)}).then((result)=>{
   			vm.$message({
               showClose: true,
               type: 'success',

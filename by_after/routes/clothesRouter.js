@@ -219,6 +219,30 @@ route.post('/query',(req,resp)=>{
     resp.send(error);
   });
 })
+//模糊查询-男
+route.post('/query_man',(req,resp)=>{
+  console.log(req.body.keys);
+  var keys =JSON.parse(req.body.keys);
+  console.log("keys",keys);
+  clothesDB.query_man(keys).then((data)=>{
+    console.log("模糊查询",data);
+    resp.send(data);
+  }).catch((error)=>{
+    resp.send(error);
+  });
+})
+//模糊查询-女
+route.post('/query_woman',(req,resp)=>{
+  console.log(req.body.keys);
+  var keys =JSON.parse(req.body.keys);
+  console.log("keys",keys);
+  clothesDB.query_woman(keys).then((data)=>{
+    console.log("模糊查询",data);
+    resp.send(data);
+  }).catch((error)=>{
+    resp.send(error);
+  });
+})
 //录入
 route.post('/save',upload.any(),(req,resp)=>{
      var name = req.body.name;

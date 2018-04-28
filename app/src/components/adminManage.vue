@@ -353,7 +353,7 @@ export default {
 	to_dalete_designer(){
 		var vm = this;
 		this.delete_designer_dialogVisible =false;
-		axios.post('http://localhost:3000/designer/batchDelete',{ids:JSON.stringify(this.delete_designer.id)}).then((result)=>{
+		axios.post('http://39.105.13.137:3000/designer/batchDelete',{ids:JSON.stringify(this.delete_designer.id)}).then((result)=>{
 			this.findAllClothes();
 		      this.findAllDesigners();
 		      this.findAllUsers();
@@ -373,7 +373,7 @@ export default {
   	//修改设计师信息
   	to_update_desinger(){
   		this.update_designer_dialogVisible =false;
-  		axios.post('http://localhost:3000/designer/update',{from:JSON.stringify(this.update_designer)}).then((result)=>{
+  		axios.post('http://39.105.13.137:3000/designer/update',{from:JSON.stringify(this.update_designer)}).then((result)=>{
 			console.log(result);
 			this.$message({
               showClose: true,
@@ -394,7 +394,7 @@ export default {
   	//-------------------------------------------------服装的管理--------------------------------------
   	// 删除设计
   	delete_mycloth(id){
-  		axios.post('http://localhost:3000/clothes/batchDelete',{ids:JSON.stringify(id)}).then((result)=>{
+  		axios.post('http://39.105.13.137:3000/clothes/batchDelete',{ids:JSON.stringify(id)}).then((result)=>{
 	  		vm.$message({
 	              showClose: true,
 	              type: 'success',
@@ -425,7 +425,7 @@ export default {
   			this.add_clothfrom.src ="../../static/女装/"+this.imgsrc;
   		}
   		console.log("this.add_clothfrom",this.add_clothfrom);
-  		axios.post('http://localhost:3000/clothes/save',{add_clothfrom:JSON.stringify(this.add_clothfrom)}).then((result)=>{
+  		axios.post('http://39.105.13.137:3000/clothes/save',{add_clothfrom:JSON.stringify(this.add_clothfrom)}).then((result)=>{
   			vm.$message({
               showClose: true,
               type: 'success',
@@ -455,7 +455,7 @@ export default {
 	// 去修改
 	to_update(){
 		this.update_dialogVisible =false;
-		axios.post('http://localhost:3000/clothes/update',{update_cloth:JSON.stringify(this.update_cloth)}).then((result)=>{
+		axios.post('http://39.105.13.137:3000/clothes/update',{update_cloth:JSON.stringify(this.update_cloth)}).then((result)=>{
   			vm.$message({
               showClose: true,
               type: 'success',
@@ -481,7 +481,7 @@ export default {
 	to_update_user(){
 		this.update_user_dialogVisible = false;
 		var vm = this;
-		axios.post('http://localhost:3000/user/update',{update_User:JSON.stringify(this.update_User)}).then((result)=>{
+		axios.post('http://39.105.13.137:3000/user/update',{update_User:JSON.stringify(this.update_User)}).then((result)=>{
   			vm.$message({
               showClose: true,
               type: 'success',
@@ -501,7 +501,7 @@ export default {
 	to_dalete_user(){
 		var vm = this;
 		this.delete_user_dialogVisible =false;
-		axios.post('http://localhost:3000/user/batchDelete',{ids:JSON.stringify(this.delete_user.id)}).then((result)=>{
+		axios.post('http://39.105.13.137:3000/user/batchDelete',{ids:JSON.stringify(this.delete_user.id)}).then((result)=>{
 			this.findAllClothes();
 		      this.findAllDesigners();
 		      this.findAllUsers();

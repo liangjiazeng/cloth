@@ -17,7 +17,7 @@
                 <el-menu-item index="1"><router-link :to="{name:'HelloWorld',params: {username: userName}}">首页</router-link></el-menu-item>
                 <el-menu-item index="2"><router-link :to="{name:'Man',params: {username: userName}}">男士专区</router-link></el-menu-item>
                 <el-menu-item index="3"><router-link :to="{name:'Woman',params: {username: userName}}">女士专区</router-link></el-menu-item>        
-                <el-menu-item index="4">设计师专区</el-menu-item>
+                <el-menu-item index="4"><router-link :to="{name:'Designers',params: {username: userName}}">设计师专区</router-link></el-menu-item>
                 <el-menu-item index="5">
                   <a >时尚资讯</a>
                 </el-menu-item>

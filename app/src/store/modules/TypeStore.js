@@ -26,25 +26,25 @@ export default {
 	},
 	actions:{
 		findAllType(context){
-			axios.get('http://localhost:3000/type/findAll').then(({data})=>{
+			axios.get('http://39.105.13.137:3000/type/findAll').then(({data})=>{
 				context.commit('alterType',data);
 			})
 		},
 		findManType(context){
-			axios.get('http://localhost:3000/type/findManType').then(({data})=>{
+			axios.get('http://39.105.13.137:3000/type/findManType').then(({data})=>{
 				// console.log("Store里面的man",data);
 				// console.log("context",context);
 				context.commit('ALTERMANTYPE',data);
 			})
 		},
 		findWomanType(context){
-			axios.get('http://localhost:3000/type/findWomanType').then(({data})=>{
+			axios.get('http://39.105.13.137:3000/type/findWomanType').then(({data})=>{
 				context.commit('alterWomanType',data);
 			})
 		},
 		saveType(context,from){
 			return new Promise(function(resolve,reject){
-				axios.post('http://localhost:3000/type/save',{type:JSON.stringify(from)}).then((result)=>{
+				axios.post('http://39.105.13.137:3000/type/save',{type:JSON.stringify(from)}).then((result)=>{
 					resolve(result);
 				}).catch((error)=>{
 					reject(error);

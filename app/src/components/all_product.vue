@@ -16,7 +16,7 @@ ss<template>
               <el-menu-item index="1"><router-link :to="{name:'HelloWorld',params: {username: userName}}">首页</router-link></el-menu-item>
               <el-menu-item index="2"><router-link :to="{name:'Man',params: {username: userName}}">男士专区</router-link></el-menu-item>
               <el-menu-item index="3"><router-link :to="{name:'Woman',params: {username: userName}}">女士专区</router-link></el-menu-item>        
-              <el-menu-item index="4">设计师专区</el-menu-item>
+              <el-menu-item index="4"><router-link :to="{name:'Designers',params: {username: userName}}">设计师专区</router-link></el-menu-item>
               <el-menu-item index="5">
                 <a >时尚资讯</a>
               </el-menu-item>
@@ -182,60 +182,6 @@ export default {
           gender:gender
       }
       this.findClothbytypeName_Gneder(obj,gender);
-      // switch(id){
-      //   case 1: 
-      //       console.log("1");
-      //       this.findManClothes_duanxiu();
-      //       break;
-      //   case 2: 
-      //       console.log("2");
-      //       this.findManClothes_xizhuang();
-      //       break;
-      //   case 3: 
-      //       console.log("3");
-      //       this.findManClothes_chenshan();
-      //       break;
-      //   case 4: 
-      //       console.log("4");
-      //       this.findManClothes_waitao();
-      //       break;
-      //   case 5: 
-      //       console.log("5");
-      //       this.findManClothes_maoyi();
-      //       break;
-      //   case 6: 
-      //       console.log("6");
-      //       this.findManClothes_Txu();
-      //       break;
-      //   case 7: 
-      //       console.log("7");
-      //       this.findWomanClothes_xizhuang();
-      //       break;
-      //   case 8: 
-      //       console.log("8");
-      //       this.findWomanCloth_qunzi();
-      //       break;
-      //   case 9: 
-      //       console.log("9");
-      //       this.findWomanCloth_waitao();
-      //       break;
-      //   case 10: 
-      //       console.log("10");
-      //       this.findWomanCloth_maoyi();
-      //       break;
-      //   case 11: 
-      //       console.log("11");
-      //       this.findWomanCloth_kuzi();
-      //       break;
-      //   case 12:
-      //     console.log("12");
-      //     this.findWomanCloth_chenshan();
-      //     break;
-      //   case 13: 
-      //     console.log("13");
-      //     this.findWomanCloth_qipao();
-      //     break;
-      // }
     },
     FindWomanCloth_chenshan:function(){
          this.findWomanCloth_chenshan().then(function(datas){

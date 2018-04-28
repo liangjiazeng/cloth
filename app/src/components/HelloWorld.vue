@@ -54,8 +54,8 @@
 						  active-text-color="#ffd04b">
 						  <el-menu-item index="1"><router-link :to="{name:'HelloWorld',params: {username: userName}}">首页</router-link></el-menu-item>
 						  <el-menu-item index="2"><router-link :to="{name:'Man',params: {username: userName}}">男士专区</router-link></el-menu-item>
-						  <el-menu-item index="3"><router-link :to="{name:'Woman',params: {username: userName}}">女士专区</router-link></el-menu-item>				
-						  <el-menu-item index="4">设计师专区</el-menu-item>
+						  <el-menu-item index="3"><router-link :to="{name:'Woman',params: {username: userName}}">女士专区</router-link></el-menu-item>	
+						  <el-menu-item index="4"><router-link :to="{name:'Designers',params: {username: userName}}">设计师专区</router-link></el-menu-item>
 						  <el-menu-item index="5">
 						  	<a >时尚资讯</a>
 						  </el-menu-item>
@@ -63,13 +63,10 @@
 						  	<a>明星搭配</a>
 						  </el-menu-item>
 						  <el-menu-item >
-						  	<el-input
-						    placeholder="请输入内容"
-						    v-model="query" style="width:500px;">
+						  	<el-input placeholder="请输入内容" v-model="query" style="width:500px;" @keyup.enter.native="show">
 						    <i slot="prefix" class="el-input__icon el-icon-search"></i>
 						  </el-input>
 						  </el-menu-item>
-							
 						</el-menu>
 				  	</div>
 				</el-col>
@@ -108,7 +105,8 @@
 						                                <h3 class="title">Williamson</h3>
 						                                <span class="post">Web Developer</span>
 						                                <ul class="icon">
-						                                    <li><a class="fa fa-search" href="#" @click="to_by(item.id,userName)">定制</a></li>
+						                                    <li>
+						                                    	<a class="fa fa-search" href="#" @click="to_by(item.id,userName)">定制</a></li>
 						                                </ul>
 						                            </div>
 						                        </div>
@@ -302,7 +300,7 @@ export default {
 	    },
 	    findManCloth(){
 	    	var vm = this;
-	    	axios.get('http://localhost:3000/clothes/findManCloth').then(({data})=>{
+	    	axios.get('http://39.105.13.137:3000/clothes/findManCloth').then(({data})=>{
 				for(var sb=0;sb<4;sb++){
 					vm.nanshen[sb] = data[sb];
 				}
@@ -311,7 +309,7 @@ export default {
 	    },
 	    findWomanCloth(){
 	    	var vm = this;
-	    	axios.get('http://localhost:3000/clothes/findWomanCloth').then(({data})=>{
+	    	axios.get('http://39.105.13.137:3000/clothes/findWomanCloth').then(({data})=>{
 				for(var sb=0;sb<4;sb++){
 					vm.nvshen[sb] = data[sb];
 				}
@@ -321,7 +319,7 @@ export default {
 	    findNewCloth(){
 	    	var vm = this;
 	    	
-	    	axios.get('http://localhost:3000/clothes/findAll').then(({data})=>{
+	    	axios.get('http://39.105.13.137:3000/clothes/findAll').then(({data})=>{
 	    		var n1;
 				for(var sb=0;sb<8;sb++){
 	    			n1=Math.floor(Math.random()*20+1);
@@ -335,13 +333,12 @@ export default {
 				vm.img = Array.from(vm.img);
 			})
 	    },
-	     to_by(cloth_id,username){	      	     
-	        this.$router.push({name:'AllProduct',params:{cloth_id:cloth_id,username:username}});	      
+	     to_by(cloth_id,username){	     	     
+	        this.$router.push({name:'AllProduct',params:{username:username}});  
+	     },
+	     show(){
+	      this.$router.push({name:'AllProduct',params:{username:this.userName}});
 	    }
-	   
-
-
-
     }
 }
 </script>

@@ -17,7 +17,7 @@
                 <el-menu-item index="1"><router-link :to="{name:'HelloWorld',params: {username: userName}}">首页</router-link></el-menu-item>
                 <el-menu-item index="2"><router-link :to="{name:'Man',params: {username: userName}}">男士专区</router-link></el-menu-item>
                 <el-menu-item index="3"><router-link :to="{name:'Woman',params: {username: userName}}">女士专区</router-link></el-menu-item>        
-                <el-menu-item index="4">设计师专区</el-menu-item>
+                <el-menu-item index="4"><router-link :to="{name:'Designers',params: {username: userName}}">设计师专区</router-link></el-menu-item>
                 <el-menu-item index="5">
                   <a >时尚资讯</a>
                 </el-menu-item>
@@ -191,7 +191,7 @@ import axios from 'axios'
   methods:{
   async findCloth(){
       var vm = this;
-      axios.post('http://localhost:3000/clothes/findById',{id:JSON.stringify(this.clothId)}).then((result)=>{
+      axios.post('http://39.105.13.137:3000/clothes/findById',{id:JSON.stringify(this.clothId)}).then((result)=>{
           console.log("result",result);
           vm.product =result.data[0];
           vm.findDesigner();
@@ -200,7 +200,7 @@ import axios from 'axios'
       })
     },
     findDesigner(){
-        axios.post('http://localhost:3000/designer/findById',{id:JSON.stringify(this.product.designer_id)}).then((data)=>{
+        axios.post('http://39.105.13.137:3000/designer/findById',{id:JSON.stringify(this.product.designer_id)}).then((data)=>{
           console.log('Array.from(data.data)[0].name',Array.from(data.data)[0].name);
           this.designername = Array.from(data.data)[0].name;
           console.log('Array.from(data.data)[0].name',Array.from(data.data)[0].name);
@@ -211,7 +211,7 @@ import axios from 'axios'
       })
     },
     finduserId(){
-      axios.post('http://localhost:3000/user/findByName',{name:JSON.stringify(this.userName)}).then((data)=>{
+      axios.post('http://39.105.13.137:3000/user/findByName',{name:JSON.stringify(this.userName)}).then((data)=>{
           console.log('data.data',data.data);
           this.order.user_id = Array.from(data.data)[0].id;
           console.log('this.order.user_id',this.order.user_id);
@@ -230,7 +230,7 @@ import axios from 'axios'
       this.order.cloth_id = this.clothId;
       this.order.price = this.product.price;
       var vm = this;
-      axios.post('http://localhost:3000/order/save',{order:JSON.stringify(this.order)}).then((result)=>{
+      axios.post('http://39.105.13.137:3000/order/save',{order:JSON.stringify(this.order)}).then((result)=>{
           this.$router.push({name:'Gouwuche',params:{user_id:vm.order.user_id,username:this.userName}});
         }).catch((error)=>{
           console.log(error);
