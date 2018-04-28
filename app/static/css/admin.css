@@ -1,0 +1,133 @@
+.header{
+	position: fixed;
+	left: 0px;
+	top: 0;
+	z-index: 1000;
+	background: #191b2e;
+	width: 200px;
+	color: #b2b4c4;
+	height: 800px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.touxiang{
+	margin-top: 50px;
+	width: 100px;
+	height: 100px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	border-radius: 50%;
+}
+.touxiang .touxiang_img{
+	margin-top: 20px;
+	width: 60px;
+	height: 60px;
+	background: red;
+	border-radius: 50%;
+}
+.touxiang .touxiang_img img{
+	border-radius: 50%;
+}
+.touxiang .userNam{
+	margin-top: 10px;
+	width: 60px;
+	height: 20px;
+	text-align: center;
+}
+
+/*导航*/
+.menu{
+	margin-top: 50px;
+}
+
+.top{
+	height: 100px;
+	background: url(../../static/background.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+.content{
+	height: 600px;
+	width: 100%;
+	background-color: #ccc;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.personal,.myDesige,.notice,.ko{
+	margin-left: 25%;
+	width: 100%;
+	height: 520px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+.content .personal li{
+	display: flex;
+	flex-direction: row;
+	width: 380px;
+	margin-bottom: 20px;
+}
+.content .personal li .left{
+	width: 20%;
+	text-align: right;
+	line-height: 40px;
+	margin-right: 10px;
+}
+
+.all_myDesing{
+	width: 100%;
+	height: 320px;
+}
+.biaoqian{
+	display: flex;
+}
+.biaoqian>div{
+	/*margin-top: 100px;*/
+	text-align: center;
+	line-height: 40px;
+	width: 180px;
+	height: 40px;
+}
+.cont{
+	width: 100%;
+	height: 520px;
+	overflow:scroll; 
+}
+.goods{
+	background: #fff;
+	width: 80%;
+	height: 150px;
+	border-bottom: 1px solid #ccc;
+	margin-bottom: 10px;
+	display: flex;
+	align-items: center;
+}
+.goods>div{
+	display: inline-block;
+	width: 170px;
+	line-height: 40px;
+	text-align: center;
+}
+.goods>div img{
+	width: 120px;
+	height: 150px;
+}
+.myDesige{
+	display: flex;
+	justify-content: center;
+}
+.btn_add{
+	margin:0 auto;
+	width: 200px;
+}
+
+.update_user{
+	text-align: center;
+}
+.update_user li{
+	margin-bottom:10px;
+}
