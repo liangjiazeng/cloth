@@ -1,0 +1,300 @@
+.el-row {
+    margin-bottom: 20px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  .el-col {
+    border-radius: 4px;
+  }
+  .bg-purple-dark {
+    background: #99a9bf;
+  }
+  .bg-purple {
+    background: #d3dce6;
+  }
+  .bg-purple-light {
+    background: #e5e9f2;
+  }
+  .grid-content {
+    border-radius: 4px;
+    min-height: 36px;
+  }
+  .row-bg {
+    padding: 10px 0;
+    background-color: #f9fafc;
+  }
+	
+
+
+	/**/
+	body{
+	margin:0;
+	font-family: 'Roboto Condensed', sans-serif;
+	background: #fff;  
+}
+body a{
+	transition: 0.5s all;
+	-webkit-transition: 0.5s all;
+	-moz-transition: 0.5s all;
+	-o-transition: 0.5s all;
+	-ms-transition: 0.5s all;
+	text-decoration:none;
+	outline:none;
+}
+h1,h2,h3,h4,h5,h6{
+	margin:0;  
+	font-family: 'Alegreya Sans', sans-serif;
+}
+p{
+	margin:0;
+}
+ul,label{
+	margin:0;
+	padding:0;
+}
+body a:hover,body a:focus{
+	text-decoration:none;
+	outline: none;
+} 
+/*-- header --*/
+.header {
+    background-color: #fff;
+    padding: 1.5em 0;
+    position: relative;
+}
+.agile_social_banner {
+    float: right;
+	margin-top: 0.8em;
+}
+.header-mdl.agileits-logo {
+    float: left;
+}
+.agileits-logo h1 {
+    font-size: 3.5em;
+    display: inline-block;
+    font-weight: 300;
+    text-transform: uppercase;
+}
+.agileits-logo h1 a {
+    color:#008080;
+    text-decoration: none;
+    display: inline-block; 
+}
+/*-- social icons --*/
+.agile_social_icons_banner {
+    margin-top: 2em;
+    text-align: right;
+}
+.agile_social_icons_banner ul {
+    display: inline-block;
+}
+.agileits_social_list li {
+    display: inline-block;
+    margin-left: 1em;
+}
+.agileits_social_list li a {
+    color: #999;
+    text-align: center;
+    display: inline-block;
+    font-size: 1em;
+    border: 1px solid;
+    padding: .4em 0;
+    width: 70px;
+    height: 32px;
+	-webkit-transition:.5s all;
+	-moz-transition:.5s all;
+	-o-transition:.5s all;
+	-ms-transition:.5s all;
+	transition:.5s all;
+}
+.agileits_social_list li a:hover{
+    color: #fff; 
+}
+
+/*走马灯*/
+.el-carousel__item h3 {
+    color: #475669;
+    font-size: 14px;
+    opacity: 0.75;
+    line-height: 200px;
+    margin: 0;
+  }
+  
+  
+
+
+
+  /*新品专区*/
+  .new_product,.man_product,.woman_product{
+  	width: 100%;
+  	height: 100px;
+  	display: flex;
+  	flex-direction: row;
+  	justify-content: center;
+  	align-items: center;
+  	margin-top: 50px;
+  	margin-bottom: 50px;
+  	font-family: "Helvetica Neue"
+  }
+
+.image{
+	width: 300px;
+	height: 420px;
+}
+
+
+/*底部*/
+.no_like{
+	margin-top: 50px;
+	margin-left: 500px;
+}
+.tags{
+	margin-top: 100px;
+}
+.tags p{
+	text-align:left;
+	margin-bottom:20px;
+	font-size:20px;
+	color: red;
+}
+.btn{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.footer{
+	height: 100px;
+	background: #ccc;
+	margin-top: 30px;
+	font-size: 20px;	
+	color: blue;
+	border-top: 2px solid #000000;
+}
+.footer>div{
+	display: flex;
+	justify-content: space-around;
+	flex-wrap: wrap;
+
+	/*align-items: center;*/
+}
+.footer span{
+	width: 100px;
+}
+
+/*css特效*/
+.demo{padding: 2em 0;}
+		.box{
+		    overflow: hidden;
+		    position: relative;
+		}
+		.box:before{
+		    content: "";
+		    display: block;
+		    border: 30px solid rgba(255, 255, 255, 0.3);
+		    position: absolute;
+		    top: 5px;
+		    left: 5px;
+		    bottom: 5px;
+		    right: 5px;
+		    opacity: 1;
+		    z-index: 2;
+		    transition: all 1s ease 0s;
+		}
+		.box:hover:before{ border: 1px solid rgba(255, 255, 255, 0.18); }
+		.box:after{
+		    content: "";
+		    display: block;
+		    border: 10px solid #fff;
+		    position: absolute;
+		    top: 35px;
+		    left: 35px;
+		    bottom: 35px;
+		    right: 35px;
+		    opacity: 1;
+		    z-index: 1;
+		    transition: all 0.3s ease 0s;
+		}
+		.box:hover:after{
+		    top: 0;
+		    left: 0;
+		    bottom: 0;
+		    right: 0;
+		    opacity: 0;
+		}
+		.box img{
+		    width: 300px;
+		    height: 420px;
+		    transform: scale(1.1);
+		    transition: all 1s ease 0s;
+		}
+		.box:hover img{ transform: scale(1); }
+		.box .box-content{
+		    padding: 20px;
+		    text-align: center;
+		    color: #fff;
+		    position: absolute;
+		    top: 45px;
+		    left: 45px;
+		    bottom: 45px;
+		    right: 45px;
+		    opacity: 1;
+		    z-index: 2;
+		    transition: all 0.3s ease 0s;
+		}
+		.box:hover .box-content{
+		    top: 6px;
+		    left: 6px;
+		    bottom: 6px;
+		    right: 6px;
+		}
+		.box .box-inner-content{
+		    width: 100%;
+		    padding-bottom: 20px;
+		    opacity: 0;
+		    position: absolute;
+		    bottom: 0;
+		    left: 0;
+		    transition: all 0.3s ease 0s;
+		}
+		.box:hover .box-inner-content{ opacity: 1; }
+		.box .title{
+		    font-size: 26px;
+		    font-weight: bold;
+		    margin: 0;
+		}
+		.box .post{
+		    display: block;
+		    font-size: 16px;
+		    font-style: italic;
+		    margin-bottom: 10px;
+		}
+		.box .icon{
+		    padding: 0;
+		    margin: 0;
+		    list-style: none;
+		}
+		.box .icon li{ display: inline-block; }
+		.box .icon li a{
+		    display: block;
+		    width: 40px;
+		    height: 40px;
+		    line-height: 40px;
+		    border-radius: 50%;
+		    background: #fff;
+		    margin-right: 10px;
+		    font-size: 18px;
+		    color: #000;
+		    transition: all 0.3s ease 0s;
+		}
+		.box .icon li a:hover{
+		    background: #000;
+		    color: #fff;
+		}
+		@media only screen and (max-width:990px){
+		    .box{ margin-bottom: 30px; }
+		}
+		#ad_img{
+			width: 600px;
+			height: 500px;
+		}
