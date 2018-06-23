@@ -8,7 +8,7 @@ if(!pool){
   pool = mysql.createPool({
     database:'cloth',
     user:'root',
-    password:'root'
+    password:'123456'
   });
   //将连接挂载到global
   global.pool = pool;

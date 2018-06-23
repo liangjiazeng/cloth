@@ -25,12 +25,12 @@ export default {
 	},
 	actions:{
 		findAllClothes(context){
-			axios.get('http://39.107.228.71:3000/clothes/findAll').then(({data})=>{	
+			axios.get('http://localhost:3000/clothes/findAll').then(({data})=>{	
 				context.commit('alterClothes',data);
 			})
 		},
 		findClothesByDesigner(context,designer_id){
-			axios.post('http://39.107.228.71:3000/clothes/findByDesignerId',{designer_id:JSON.stringify(designer_id)}).then((result)=>{
+			axios.post('http://localhost:3000/clothes/findByDesignerId',{designer_id:JSON.stringify(designer_id)}).then((result)=>{
 					console.log("result",result.data);
 					context.commit('alterClothes',result.data);
 				}).catch((error)=>{
@@ -38,7 +38,7 @@ export default {
 				})
 		},
 		findManClothesByDesigner(context,designer_id){
-			axios.post('http://39.107.228.71:3000/clothes/findManClothesByDesigner',{designer_id:JSON.stringify(designer_id)}).then((result)=>{
+			axios.post('http://localhost:3000/clothes/findManClothesByDesigner',{designer_id:JSON.stringify(designer_id)}).then((result)=>{
 					console.log("result",result.data);
 					context.commit('alterManClothes',result.data);
 				}).catch((error)=>{
@@ -46,92 +46,92 @@ export default {
 				})
 		},
 		findWomanClothesByDesigner(context,designer_id){
-			axios.post('http://39.107.228.71:3000/clothes/findWomanClothesByDesigner',{designer_id:JSON.stringify(designer_id)}).then((result)=>{
+			axios.post('http://localhost:3000/clothes/findWomanClothesByDesigner',{designer_id:JSON.stringify(designer_id)}).then((result)=>{
 					context.commit('alterWomanClothes',result.data);
 				}).catch((error)=>{
 					console.log("错误",error);
 				})
 		},
 		findManClothes(context){
-			axios.get('http://39.107.228.71:3000/clothes/findManCloth').then(({data})=>{
+			axios.get('http://localhost:3000/clothes/findManCloth').then(({data})=>{
 				
 				context.commit('alterManClothes',data);
 			})
 		},
 		findWomanClothes(context){
-			axios.get('http://39.107.228.71:3000/clothes/findWomanCloth').then(({data})=>{
+			axios.get('http://localhost:3000/clothes/findWomanCloth').then(({data})=>{
 				
 				context.commit('alterWomanClothes',data);
 			})
 		},
 		findManClothes_duanxiu(context){
-			axios.get('http://39.107.228.71:3000/clothes/findManCloth_duanxiu').then(({data})=>{
+			axios.get('http://localhost:3000/clothes/findManCloth_duanxiu').then(({data})=>{
 				context.commit('alterManClothes',data);
 			})
 		},
 		findManClothes_xizhuang(context){
-			axios.get('http://39.107.228.71:3000/clothes/findManCloth_xizhuang').then(({data})=>{
+			axios.get('http://localhost:3000/clothes/findManCloth_xizhuang').then(({data})=>{
 				context.commit('alterManClothes',data);
 			})
 		},
 		findManClothes_chenshan(context){
-			axios.get('http://39.107.228.71:3000/clothes/findManCloth_chenshan').then(({data})=>{
+			axios.get('http://localhost:3000/clothes/findManCloth_chenshan').then(({data})=>{
 				context.commit('alterManClothes',data);
 			})
 		},
 		findManClothes_waitao(context){
-			axios.get('http://39.107.228.71:3000/clothes/findManCloth_waitao').then(({data})=>{
+			axios.get('http://localhost:3000/clothes/findManCloth_waitao').then(({data})=>{
 				context.commit('alterManClothes',data);
 			})
 		},
 		findManClothes_maoyi(context){
-			axios.get('http://39.107.228.71:3000/clothes/findManCloth_maoyi').then(({data})=>{
+			axios.get('http://localhost:3000/clothes/findManCloth_maoyi').then(({data})=>{
 				context.commit('alterManClothes',data);
 			})
 		},
 		findManClothes_Txu(context){
-			axios.get('http://39.107.228.71:3000/clothes/findManCloth_Txu').then(({data})=>{
+			axios.get('http://localhost:3000/clothes/findManCloth_Txu').then(({data})=>{
 				context.commit('alterManClothes',data);
 			})
 		},
 		findWomanClothes_xizhuang(context){
-			axios.get('http://39.107.228.71:3000/clothes/findWomanCloth_xizhuang').then(({data})=>{
+			axios.get('http://localhost:3000/clothes/findWomanCloth_xizhuang').then(({data})=>{
 				context.commit('alterWomanClothes',data);
 			})
 		},
 		findWomanCloth_chenshan(context){
-			axios.get('http://39.107.228.71:3000/clothes/findWomanCloth_chenshan').then(({data})=>{
+			axios.get('http://localhost:3000/clothes/findWomanCloth_chenshan').then(({data})=>{
 				context.commit('alterWomanClothes',data);
 			})
 		},
 		findWomanCloth_qunzi(context){
-			axios.get('http://39.107.228.71:3000/clothes/findWomanCloth_qunzi').then(({data})=>{
+			axios.get('http://localhost:3000/clothes/findWomanCloth_qunzi').then(({data})=>{
 				context.commit('alterWomanClothes',data);
 			})
 		},
 		findWomanCloth_waitao(context){
-			axios.get('http://39.107.228.71:3000/clothes/findWomanCloth_waitao').then(({data})=>{
+			axios.get('http://localhost:3000/clothes/findWomanCloth_waitao').then(({data})=>{
 				context.commit('alterWomanClothes',data);
 			})
 		},
 		findWomanCloth_maoyi(context){
-			axios.get('http://39.107.228.71:3000/clothes/findWomanCloth_maoyi').then(({data})=>{
+			axios.get('http://localhost:3000/clothes/findWomanCloth_maoyi').then(({data})=>{
 				context.commit('alterWomanClothes',data);
 			})
 		},
 		findWomanCloth_qipao(context){
-			axios.get('http://39.107.228.71:3000/clothes/findWomanCloth_qipao').then(({data})=>{
+			axios.get('http://localhost:3000/clothes/findWomanCloth_qipao').then(({data})=>{
 				context.commit('alterWomanClothes',data);
 			})
 		},
 		findWomanCloth_kuzi(context){
-			axios.get('http://39.107.228.71:3000/clothes/findWomanCloth_kuzi').then(({data})=>{
+			axios.get('http://localhost:3000/clothes/findWomanCloth_kuzi').then(({data})=>{
 				context.commit('alterWomanClothes',data);
 			})
 		},
 		// -----------------------------------------------------------------------------------------------
 		findClothbytypeName_Gneder(context,name,gender){
-			axios.post('http://39.107.228.71:3000/clothes/findClothbytypeName_Gneder',{name:JSON.stringify(name.name),gender:JSON.stringify(name.gender)}).then((result)=>{
+			axios.post('http://localhost:3000/clothes/findClothbytypeName_Gneder',{name:JSON.stringify(name.name),gender:JSON.stringify(name.gender)}).then((result)=>{
 					console.log(result);
 					context.commit('alterClothes',result.data);
 				}).catch((error)=>{
@@ -141,7 +141,7 @@ export default {
 		//-----------------------------------------------------------------------------------------------
 		saveClothes(context,from){
 			return new Promise(function(resolve,reject){
-				axios.post('http://39.107.228.71:3000/clothes/save',{clothes:JSON.stringify(from)}).then((result)=>{
+				axios.post('http://localhost:3000/clothes/save',{clothes:JSON.stringify(from)}).then((result)=>{
 					resolve(result);
 				}).catch((error)=>{
 					reject(error);
@@ -149,7 +149,7 @@ export default {
 			})
 		},
 		selectQuery(context,keys){
-			axios.post('http://39.107.228.71:3000/clothes/query',{keys:JSON.stringify(keys)}).then((result)=>{
+			axios.post('http://localhost:3000/clothes/query',{keys:JSON.stringify(keys)}).then((result)=>{
 				console.log("result",result.data);
 				context.commit('alterClothes',result.data);
 				context.commit('alterManClothes',result.data);
@@ -161,7 +161,7 @@ export default {
 				})
 		},
 		selectQuery_Man(context,keys){
-			axios.post('http://39.107.228.71:3000/clothes/query_man',{keys:JSON.stringify(keys)}).then((result)=>{
+			axios.post('http://localhost:3000/clothes/query_man',{keys:JSON.stringify(keys)}).then((result)=>{
 				console.log("result",result.data);	
 				context.commit('alterManClothes',result.data);		
 				}).catch((error)=>{
@@ -169,7 +169,7 @@ export default {
 				})
 		},
 		selectQuery_Woman(context,keys){
-			axios.post('http://39.107.228.71:3000/clothes/query_woman',{keys:JSON.stringify(keys)}).then((result)=>{
+			axios.post('http://localhost:3000/clothes/query_woman',{keys:JSON.stringify(keys)}).then((result)=>{
 				console.log("result",result.data);		
 				context.commit('alterWomanClothes',result.data);	
 				}).catch((error)=>{

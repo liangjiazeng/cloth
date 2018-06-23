@@ -303,7 +303,7 @@ export default {
                     message: '添加收货失败,请输入正确收货地址信息'
                   });
             }else{
-              axios.post('http://39.107.228.71:3000/user_address/save',{userAddress:JSON.stringify(this.address)}).then((result)=>{
+              axios.post('http://localhost:3000/user_address/save',{userAddress:JSON.stringify(this.address)}).then((result)=>{
                  this.$message({
                     showClose: true,
                     type: 'success',
@@ -338,7 +338,7 @@ export default {
           });
 
       }else{
-        axios.post('http://39.107.228.71:3000/user/update',{user:JSON.stringify(this.user[0])}).then((result)=>{
+        axios.post('http://localhost:3000/user/update',{user:JSON.stringify(this.user[0])}).then((result)=>{
            this.$message({
               showClose: true,
               type: 'success',
@@ -358,7 +358,7 @@ export default {
   	},
   	// 查找所有我的收货地址
   	findAllMyAddress(){
-  		axios.post('http://39.107.228.71:3000/user_address/findAll',{user_id:JSON.stringify(this.user[0].id)}).then((result)=>{
+  		axios.post('http://localhost:3000/user_address/findAll',{user_id:JSON.stringify(this.user[0].id)}).then((result)=>{
            	
            this.allAddress =Array.from(result.data);
            console.log("this.allAddress",this.allAddress);
@@ -379,7 +379,7 @@ export default {
     },
   	to_delete_address(){
   		this.delete_address = false;
-  		axios.post('http://39.107.228.71:3000/user_address/batchDelete',{ids:JSON.stringify(this.delete_address_id.id)}).then((result)=>{
+  		axios.post('http://localhost:3000/user_address/batchDelete',{ids:JSON.stringify(this.delete_address_id.id)}).then((result)=>{
            	this.findAllMyAddress();
          
         }).catch((error)=>{
@@ -389,7 +389,7 @@ export default {
   	},
     to_update_address(){
       this.update_address = false;
-      axios.post('http://39.107.228.71:3000/user_address/update',{id:JSON.stringify(this.update_Address.id),name:JSON.stringify(this.update_Address.name),address:JSON.stringify(this.update_Address.address),tel:JSON.stringify(this.update_Address.tel)}).then((result)=>{
+      axios.post('http://localhost:3000/user_address/update',{id:JSON.stringify(this.update_Address.id),name:JSON.stringify(this.update_Address.name),address:JSON.stringify(this.update_Address.address),tel:JSON.stringify(this.update_Address.tel)}).then((result)=>{
             this.$message({
               showClose: true,
               type: 'success',
@@ -403,11 +403,11 @@ export default {
     },
     showMyLikeCloth(){
       var vm = this;
-      axios.post('http://39.107.228.71:3000/user/findAllMyLike',{id:JSON.stringify(this.user[0].id)}).then((result)=>{
+      axios.post('http://localhost:3000/user/findAllMyLike',{id:JSON.stringify(this.user[0].id)}).then((result)=>{
          var list=Array.from(result.data);
          var LikeList = [];
          list.forEach(function(item,index){
-              axios.post('http://39.107.228.71:3000/clothes/findId',{cloth_id:JSON.stringify(item.cloth_id)}).then((result)=>{
+              axios.post('http://localhost:3000/clothes/findId',{cloth_id:JSON.stringify(item.cloth_id)}).then((result)=>{
                 console.log("result.data[0];",result.data[0]);
                 var sb =result.data[0];
                  LikeList.push(sb);
@@ -424,11 +424,11 @@ export default {
     },
     showMyLikeDesigner(){
       var vm = this;
-      axios.post('http://39.107.228.71:3000/user/findAllMyLikeDesigners',{id:JSON.stringify(this.user[0].id)}).then((result)=>{
+      axios.post('http://localhost:3000/user/findAllMyLikeDesigners',{id:JSON.stringify(this.user[0].id)}).then((result)=>{
          var list=Array.from(result.data);
          var LikeList = [];
          list.forEach(function(item,index){
-              axios.post('http://39.107.228.71:3000/designer/findById',{id:JSON.stringify(item.designer_id)}).then((result)=>{
+              axios.post('http://localhost:3000/designer/findById',{id:JSON.stringify(item.designer_id)}).then((result)=>{
                 console.log("result.data[0];",result.data[0]);
                 var sb =result.data[0];
                  LikeList.push(sb);
@@ -444,7 +444,7 @@ export default {
         })
     },
     deleteLikeDesigner(id){
-      axios.post('http://39.107.228.71:3000/user/deleteLikeDesigners',{designer_id:JSON.stringify(id),userName:this.userName}).then((result)=>{
+      axios.post('http://localhost:3000/user/deleteLikeDesigners',{designer_id:JSON.stringify(id),userName:this.userName}).then((result)=>{
              this.showMyLikeDesigner();
              this.$message({
               showClose: true,
@@ -461,7 +461,7 @@ export default {
         })
     },
     deleteLikeCloth(id){
-      axios.post('http://39.107.228.71:3000/user/deleteLikeClothes',{cloth_id:JSON.stringify(id),userName:this.userName}).then((result)=>{
+      axios.post('http://localhost:3000/user/deleteLikeClothes',{cloth_id:JSON.stringify(id),userName:this.userName}).then((result)=>{
              this.showMyLikeCloth();
              this.$message({
               showClose: true,
