@@ -90,8 +90,8 @@ route.post('/save_personalImg',upload.any(),(req,resp)=>{
      var tmp_path = req.files[0].path+"";
     // 指定文件上传后的目录 - 示例为"images"目录。 
     var target_path="";
-    target_path = 'E:\\cloth\\app\\static\\头像\\'+ req.files[0].originalname;      
-
+   target_path = '/usr/local/apache2/htdocs/cloth/app/static/头像/'+ req.files[0].originalname;      
+    console.log("target_path1",target_path)
 
     // 移动文件
     fs.rename(tmp_path, target_path, function(err) {
@@ -101,7 +101,7 @@ route.post('/save_personalImg',upload.any(),(req,resp)=>{
          if (err) throw err;
       });
     });
-    target_path =target_path.split('\\');
+   target_path =target_path.split('/');
     var Path="../../";
     var i =target_path.indexOf("static");
     for(i;i<target_path.length;i++){

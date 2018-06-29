@@ -20,14 +20,14 @@ export default {
 	},
 	actions:{
 		findAllUsers(context){
-			axios.get('http://localhost:3000/user/findAll').then(({data})=>{
+			axios.get('http://39.107.228.71:3000/user/findAll').then(({data})=>{
 				context.commit('alterUsers',data);
 			})
 		},
 		findSomeOne(context,username){
 			return new Promise(function(resolve,reject){
 				console.log("username",username);
-				axios.post('http://localhost:3000/user/findByName',{name:JSON.stringify(username)}).then((data)=>{
+				axios.post('http://39.107.228.71:3000/user/findByName',{name:JSON.stringify(username)}).then((data)=>{
 					context.commit('alterUsersInfor',data.data[0]);
 					resolve(data);
 				}).catch((error)=>{
@@ -38,7 +38,7 @@ export default {
 		},
 		saveUser(context,from){
 			return new Promise(function(resolve,reject){
-				axios.post('http://localhost:3000/user/save',{user:JSON.stringify(from)}).then((result)=>{
+				axios.post('http://39.107.228.71:3000/user/save',{user:JSON.stringify(from)}).then((result)=>{
 					resolve(result);
 				}).catch((error)=>{
 					reject(error);
@@ -47,7 +47,7 @@ export default {
 		},
 		userlogin(context,from){
 			return new Promise(function(resolve,reject){
-				axios.post('http://localhost:3000/user/login',{user:JSON.stringify(from)}).then((result)=>{
+				axios.post('http://39.107.228.71:3000/user/login',{user:JSON.stringify(from)}).then((result)=>{
 					console.log("STORE",result);
 					resolve(result);
 				}).catch((error)=>{
